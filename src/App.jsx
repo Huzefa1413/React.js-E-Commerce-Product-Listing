@@ -1,4 +1,4 @@
-import ProductsPage from './Pages/ProductsPage';
+import ProductsPage from './Pages/ProductsPage.jsx';
 import './styles/styles.css';
 
 function App() {

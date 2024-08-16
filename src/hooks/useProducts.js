@@ -3,7 +3,7 @@ import {
   fetchAllCategories,
   fetchAllProducts,
   fetchProductsByCategory,
-} from '../API';
+} from '../API.js';
 
 const useProducts = (category) => {
   const [products, setProducts] = useState([]);

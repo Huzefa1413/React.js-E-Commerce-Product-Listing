@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { ProductsContext } from '../ContextApi/ProductsContext';
-import SearchBar from '../Components/SearchBar';
-import CategoryFilter from '../Components/CategoryFilter';
-import PriceRangeFilter from '../Components/PriceRangeFilter';
-import SortOptions from '../Components/SortOptions';
-import ProductList from '../Components/ProductList';
+import { ProductsContext } from '../ContextApi/ProductsContext.jsx';
+import SearchBar from '../Components/SearchBar.jsx';
+import CategoryFilter from '../Components/CategoryFilter.jsx';
+import PriceRangeFilter from '../Components/PriceRangeFilter.jsx';
+import SortOptions from '../Components/SortOptions.jsx';
+import ProductList from '../Components/ProductList.jsx';
 
 const ProductsPage = () => {
   const {
