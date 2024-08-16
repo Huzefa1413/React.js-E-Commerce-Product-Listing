@@ -91,14 +91,18 @@ product-catalog-app/
 │   │   ├── SortOptions.jsx
 │   │   └── ProductList.jsx
 │   ├── ContextApi/
-│   │   ├── ProductsContext.js
+│   │   ├── ProductsContext.jsx
 │   │   └── API.js
+│   ├── hooks/
+│   │   └── useProducts.js
 │   ├── Pages/
 │   │   └── ProductsPage.jsx
 │   ├── App.jsx
+|   ├── config.js
 │   ├── main.jsx
 │   └── styles/
 │       └── styles.css
+├── index.html
 ├── .gitignore
 ├── package.json
 └── README.md
