@@ -74,7 +74,7 @@ The E-commerce Product Listing is a React-based web application that provides us
 
 ## **Usage**
 
-Once the application is running, users can interact with the product catalog by searching, filtering, and sorting products. The interface is intuitive, with search bars, dropdowns, and sliders for filtering, and radio buttons or dropdowns for sorting. Implemented pagination, and included transitions for better user experience.
+Once the application is running, users can interact with the product catalog by searching, filtering, and sorting products. The interface is intuitive, with search bars, dropdowns, and sliders for filtering, and radio buttons or dropdowns for sorting. Implemented pagination, and included transitions for better user experience. Also included Dark Light Mode Toggle.
 
 ## **Folder Structure**
 
