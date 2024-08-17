@@ -5,14 +5,15 @@ import {
   fetchProductsByCategory,
 } from './API.js';
 
-const ProductsContext = createContext();
+const ProductsContext = createContext(); // Create context for products
 
 const ProductsProvider = ({ children }) => {
-  const [products, setProducts] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [products, setProducts] = useState([]); // Stores all products
+  const [categories, setCategories] = useState([]); // Stores product categories
+  const [loading, setLoading] = useState(true); // Tracks loading state
+  const [error, setError] = useState(null); // Tracks errors
 
+  // States for filters and sorting
   const [searchTerm, setSearchTerm] = useState('');
   const [category, setCategory] = useState('');
   const [priceRange, setPriceRange] = useState([0, 1000]);
@@ -25,21 +26,23 @@ const ProductsProvider = ({ children }) => {
         const categoriesData = await fetchAllCategories('/products/categories');
         setCategories(categoriesData);
 
+        // Fetch products based on selected category or all products
         const productsData = category
           ? await fetchProductsByCategory(`/products/category/${category}`)
           : await fetchAllProducts('/products');
 
         setProducts(productsData);
       } catch (err) {
-        setError(err.message);
+        setError(err.message); // Handle any errors
       } finally {
-        setLoading(false);
+        setLoading(false); // End loading state
       }
     };
 
-    fetchInitialData();
+    fetchInitialData(); // Fetch data when component mounts or `category` changes
   }, [category]);
 
+  // Filter and sort products based on user selections
   const filteredProducts = products
     .filter((product) => {
       const matchesSearchTerm = product.title
@@ -84,7 +87,7 @@ const ProductsProvider = ({ children }) => {
         setPriceRange,
         sortOption,
         setSortOption,
-        filteredProducts,
+        filteredProducts, // Provide filtered and sorted products
       }}
     >
       {children}

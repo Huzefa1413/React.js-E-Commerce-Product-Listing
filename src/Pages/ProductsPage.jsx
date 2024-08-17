@@ -33,24 +33,23 @@ const ProductsPage = () => {
     filteredProducts,
   } = useContext(ProductsContext);
 
-  const [viewMode, setViewMode] = useState('grid'); // State to manage view mode
-
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [viewMode, setViewMode] = useState('grid'); // Manage view mode (grid or list)
+  const [isDarkMode, setIsDarkMode] = useState(false); // Manage dark/light theme
 
   const toggleTheme = () => {
-    setIsDarkMode((prevMode) => !prevMode);
+    setIsDarkMode((prevMode) => !prevMode); // Toggle between dark and light mode
   };
 
   useEffect(() => {
-    document.body.className = isDarkMode ? 'dark-mode' : '';
+    document.body.className = isDarkMode ? 'dark-mode' : ''; // Apply theme to the body
   }, [isDarkMode]);
 
   if (loading) {
-    <Loading />;
+    return <Loading />; // Show loading spinner if data is loading
   }
 
   if (error) {
-    return <p>Error: {error}</p>;
+    return <p>Error: {error}</p>; // Display error message if there's an error
   }
 
   return (
@@ -100,7 +99,8 @@ const ProductsPage = () => {
         </Col>
         <Col xs={12} md={7} lg={9} className="right">
           <div className="top-bar">
-            <label>{filteredProducts.length} items found</label>
+            <label>{filteredProducts.length} items found</label>{' '}
+            {/* Display the number of filtered products */}
             <div className="top-right">
               <SortOptions
                 sortOption={sortOption}
@@ -111,7 +111,7 @@ const ProductsPage = () => {
                   className={`switch-item ${
                     viewMode === 'grid' ? 'active' : ''
                   }`}
-                  onClick={() => setViewMode('grid')}
+                  onClick={() => setViewMode('grid')} // Set view mode to grid
                 >
                   <BsFillGrid3X3GapFill />
                 </div>
@@ -119,14 +119,15 @@ const ProductsPage = () => {
                   className={`switch-item ${
                     viewMode === 'list' ? 'active' : ''
                   }`}
-                  onClick={() => setViewMode('list')}
+                  onClick={() => setViewMode('list')} // Set view mode to list
                 >
                   <FaListUl />
                 </div>
               </div>
             </div>
           </div>
-          <ProductList products={filteredProducts} viewMode={viewMode} />
+          <ProductList products={filteredProducts} viewMode={viewMode} />{' '}
+          {/* Render the list of products */}
         </Col>
       </Row>
     </Container>
