@@ -2,14 +2,36 @@ import React from 'react';
 
 const CategoryFilter = ({ categories, category, setCategory }) => {
   return (
-    <select value={category} onChange={(e) => setCategory(e.target.value)}>
-      <option value="">All Categories</option>
-      {categories.map((cat, i) => (
-        <option key={i} value={cat}>
-          {cat}
-        </option>
-      ))}
-    </select>
+    <div className="categories">
+      <ul>
+        <li>
+          <label>
+            <input
+              type="radio"
+              name="category"
+              value=""
+              checked={category === ''}
+              onChange={(e) => setCategory(e.target.value)}
+            />
+            All Categories
+          </label>
+        </li>
+        {categories.map((cat, i) => (
+          <li key={i}>
+            <label>
+              <input
+                type="radio"
+                name="category"
+                value={cat}
+                checked={category === cat}
+                onChange={(e) => setCategory(e.target.value)}
+              />
+              {cat}
+            </label>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
