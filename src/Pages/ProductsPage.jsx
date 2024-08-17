@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { ProductsContext } from '../ContextApi/ProductsContext.jsx';
-import SearchBar from '../Components/SearchBar.jsx';
+import SearchBar from '../Components/Searchbar.jsx';
 import CategoryFilter from '../Components/CategoryFilter.jsx';
 import PriceRangeFilter from '../Components/PriceRangeFilter.jsx';
 import SortOptions from '../Components/SortOptions.jsx';

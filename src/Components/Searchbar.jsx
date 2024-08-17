@@ -1,5 +1,4 @@
 import React from 'react';
-import { CiSearch } from 'react-icons/ci';
 
 const SearchBar = ({ searchTerm, setSearchTerm }) => {
   return (
